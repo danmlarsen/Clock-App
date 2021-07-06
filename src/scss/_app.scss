@@ -8,7 +8,7 @@
     background-repeat: no-repeat;
     background-image: url('../assets/mobile/bg-image-daytime.jpg');
     background-blend-mode: multiply;
-    background-color: rgba(#000, 0.5);
+    background-color: rgba(#000, 0.4);
 
     @include mq(tablet) {
         background-image: url('../assets/tablet/bg-image-daytime.jpg');

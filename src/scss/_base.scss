@@ -21,7 +21,6 @@ body {
     font-size: 1.2rem;
     line-height: 1.55;
     min-height: 100vh;
-    background-color: #000;
 
     @include mq(tablet) {
         font-size: 1.8rem;
