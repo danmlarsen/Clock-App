@@ -1,0 +1,13 @@
+@use 'abstract' as *;
+
+.container {
+    max-width: 119rem;
+    width: 100%;
+    margin: 4rem auto;
+    padding: 0 2.6rem;
+    position: relative;
+
+    @include mq(tablet) {
+        padding-left: 6.4rem;
+    }
+}

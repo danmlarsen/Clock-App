@@ -1,0 +1,103 @@
+@use 'abstract' as *;
+
+.details {
+    height: 25.6rem;
+
+    align-self: flex-end;
+
+    overflow: hidden;
+    transition: 0.4s ease-in;
+
+    color: $color-dark-secondary;
+    background-color: rgba($color-white, 0.7);
+    // mix-blend-mode: multiply;
+
+    backdrop-filter: blur(10px);
+
+    @include mq(tablet) {
+        min-height: 45vh;
+        max-height: 44rem;
+    }
+
+    @include mq(desktop) {
+        margin-top: -4.2rem;
+    }
+
+    .container {
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &--hidden {
+        height: 0;
+        min-height: 0;
+    }
+
+    &--night {
+        color: $color-white;
+        background-color: rgba($color-dark, 0.75);
+    }
+
+    &--night &__list-item {
+        &:nth-child(1),
+        &:nth-child(2) {
+            border-color: rgba(#fff, 0.25);
+        }
+    }
+
+    &__list {
+        list-style: none;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        row-gap: 1.6rem;
+
+        padding: 4.8rem 0;
+
+        @include mq(tablet) {
+            grid-template-columns: auto max-content;
+            grid-template-rows: repeat(2, 1fr);
+            grid-auto-flow: column;
+            row-gap: 0;
+            align-items: stretch;
+
+            padding: 0;
+
+            width: 80%;
+            height: 20.2rem;
+        }
+
+        @include mq(desktop) {
+            width: 84.4rem;
+            height: 25.2rem;
+            row-gap: 0;
+        }
+    }
+
+    &__list-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include mq(tablet) {
+            flex-direction: column;
+            justify-content: stretch;
+            align-items: flex-start;
+        }
+
+        @include mq(desktop) {
+            &:nth-child(1),
+            &:nth-child(2) {
+                border-right: 1px solid rgba(#000, 0.25);
+            }
+
+            &:nth-child(3),
+            &:nth-child(4) {
+                padding-left: 8rem;
+            }
+        }
+    }
+}

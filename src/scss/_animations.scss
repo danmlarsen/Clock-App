@@ -1,0 +1,18 @@
+@keyframes sun-rotation {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes moon-rotation {
+    50% {
+        transform: rotateZ(50deg);
+        // filter: drop-shadow(5px 5px 10px rgba(#000, 0.9));
+    }
+}
+
+@keyframes rotate {
+    to {
+        transform: rotateZ(180deg);
+    }
+}

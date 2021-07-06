@@ -1,0 +1,78 @@
+@use 'abstract' as *;
+
+.clock {
+    height: 100%;
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include mq(tablet) {
+        justify-content: flex-end;
+    }
+
+    @include mq(desktop) {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    &__content {
+        display: grid;
+        row-gap: 1rem;
+    }
+
+    &__greeting {
+        display: flex;
+        align-items: center;
+
+        transition: opacity 0.4s ease-in;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 2.4rem;
+            height: 2.4rem;
+            background-image: url('../assets/desktop/icon-sun.svg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin-right: 1.7rem;
+
+            animation: sun-rotation 10s linear infinite;
+        }
+
+        &--night::before {
+            width: 2.234rem;
+            height: 2.4rem;
+            background-image: url('../assets/desktop/icon-moon.svg');
+            animation: moon-rotation 10s linear infinite;
+        }
+
+        &::after {
+            @include mq(tablet) {
+                content: ", it's currently";
+            }
+        }
+    }
+
+    &__time {
+        @include mq(tablet) {
+            margin-right: 0.3rem;
+        }
+        display: inline-block;
+        word-break: break-all;
+    }
+
+    &__abbreviation {
+        font-weight: 300;
+        letter-spacing: 0;
+        display: inline-block;
+        font-size: 1.25em;
+
+        @include mq(desktop) {
+            font-size: 4rem;
+        }
+    }
+}

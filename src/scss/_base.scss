@@ -1,0 +1,83 @@
+@use 'abstract' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    color: $color-white;
+    font-size: 1.2rem;
+    line-height: 1.55;
+    min-height: 100vh;
+    background-color: #000;
+
+    @include mq(tablet) {
+        font-size: 1.8rem;
+    }
+
+    @include mq(huge) {
+        font-size: 2rem;
+    }
+}
+
+h1 {
+    font-size: 10rem;
+    line-height: 1;
+    letter-spacing: -1px;
+
+    @include mq(tablet) {
+        font-size: 17.5rem;
+    }
+
+    @include mq(desktop) {
+        font-size: 20rem;
+    }
+}
+
+h2 {
+    font-size: 2em;
+    line-height: 1.09;
+    @include mq(desktop) {
+        font-size: 3.1em;
+    }
+}
+
+h3 {
+    font-size: 1.3em;
+    line-height: 1.03;
+    text-transform: uppercase;
+    letter-spacing: 4.8px;
+}
+
+h4 {
+    font-size: 1.11em;
+    line-height: 1.04;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+h5 {
+    font-size: 1em;
+    line-height: 1.05;
+}
+
+h6 {
+    font-size: 0.83em;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 2;
+}

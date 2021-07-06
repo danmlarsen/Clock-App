@@ -1,0 +1,27 @@
+$color-white: #fff;
+$color-dark: #000;
+$color-dark-secondary: #303030;
+$color-dark-grey: #979797;
+$color-grey: #ccc;
+
+$breakpoints: (
+    'tiny': 20em,
+    'mobile': 23.4em,
+    'tablet': 37.5em,
+    'desktop': 64em,
+    'huge': 100em,
+);
+
+@mixin mq($key) {
+    $size: map-get($breakpoints, $key);
+
+    @media only screen and (min-width: $size) {
+        @content;
+    }
+}
+
+@mixin mq-hover() {
+    @media (hover: hover) and (pointer: fine) {
+        @content;
+    }
+}

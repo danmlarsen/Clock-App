@@ -1,0 +1,81 @@
+@use 'abstract' as *;
+
+.quote {
+    padding: inherit;
+    max-width: 57.3rem;
+    max-height: 25rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    transition: all 0.4s ease-out 0.2s;
+
+    @include mq(desktop) {
+        max-width: 50%;
+    }
+
+    &--hidden {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease-in;
+    }
+
+    &__container {
+        width: 100%;
+        display: grid;
+        gap: 1rem;
+        align-content: start;
+        grid-template-columns: auto 2rem;
+    }
+
+    &__content {
+        transition: opacity 0.3s;
+
+        &::before {
+            content: open-quote;
+        }
+
+        &::after {
+            content: close-quote;
+        }
+    }
+
+    &__author {
+        font-weight: bold;
+        font-style: normal;
+        transition: opacity 0.3s;
+    }
+
+    &__refresh {
+        margin-top: 0.5rem;
+
+        &:hover,
+        &:active {
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .refresh__icon {
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+        }
+
+        .refresh__icon:hover path,
+        .refresh__icon:focus path {
+            @include mq-hover {
+                transition: 0.2s ease-in;
+                opacity: 1;
+            }
+        }
+
+        &--active .refresh__icon {
+            animation: rotate 0.5s linear infinite;
+            path {
+                opacity: 1;
+            }
+        }
+    }
+}

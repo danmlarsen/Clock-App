@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon-32x32.png"
+        />
+
+        <link rel="stylesheet" href="scss/main.scss" />
+
+        <script src="./js/index.js" defer></script>
+
+        <title>Clock App</title>
+    </head>
+    <body>
+        <div class="loading-screen">
+            <img
+                class="loading-screen__clock"
+                src="assets/desktop/icon-clock.svg"
+                alt="Clock"
+            />
+            <p class="loading-screen__text">Setting clock...</p>
+        </div>
+        <div class="app app--loading">
+            <div class="container">
+                <figure class="quote">
+                    <div class="quote__container">
+                        <blockquote class="quote__content"></blockquote>
+                        <div class="quote__refresh">
+                            <svg
+                                class="refresh__icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M7.188 10.667a.208.208 0 01.147.355l-2.344 2.206a5.826 5.826 0 009.578-2.488l2.387.746A8.322 8.322 0 013.17 14.94l-2.149 2.022a.208.208 0 01-.355-.148v-6.148h6.52zm7.617-7.63L16.978.958a.208.208 0 01.355.146v6.23h-6.498a.208.208 0 01-.147-.356L13 4.765A5.825 5.825 0 003.43 7.26l-2.386-.746a8.32 8.32 0 0113.76-3.477z"
+                                    fill="#FFF"
+                                    fill-rule="nonzero"
+                                    opacity=".5"
+                                />
+                            </svg>
+                        </div>
+                        <figcaption>
+                            <cite class="quote__author"></cite>
+                        </figcaption>
+                    </div>
+                </figure>
+
+                <div class="clock">
+                    <div class="clock__content">
+                        <h4 class="clock__greeting"></h4>
+                        <div>
+                            <h1 class="clock__time"></h1>
+                            <p class="clock__abbreviation"></p>
+                        </div>
+                        <h3 class="clock__location"></h3>
+                    </div>
+                    <div class="clock__btn-container">
+                        <button type="button" class="btn">
+                            More
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 40 40"
+                            >
+                                <circle cx="20" cy="20" r="20" />
+                                <path d="M14,23l6-6,6,6" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="details details--hidden">
+                <div class="container">
+                    <ul class="details__list">
+                        <li class="details__list-item">
+                            <h6>Current timezone</h6>
+                            <h2></h2>
+                        </li>
+                        <li class="details__list-item">
+                            <h6>Day of the year</h6>
+                            <h2></h2>
+                        </li>
+                        <li class="details__list-item">
+                            <h6>Day of the week</h6>
+                            <h2></h2>
+                        </li>
+                        <li class="details__list-item">
+                            <h6>Week number</h6>
+                            <h2></h2>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
