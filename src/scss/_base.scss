@@ -35,7 +35,7 @@ body {
 h1 {
     font-size: 10rem;
     line-height: 1;
-    letter-spacing: -1px;
+    letter-spacing: -0.025em;
 
     @include mq(tablet) {
         font-size: 17.5rem;
